@@ -13,7 +13,7 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 
 # ── Constantes ────────────────────────────────────────────────────────────────
-ZENODO_URL = "https://zenodo.org/record/5764502/files/Galaxy10_DECals.h5"
+ZENODO_URL = "https://zenodo.org/records/10845026/files/Galaxy10_DECals.h5"
 
 CLASS_NAMES = [
     "Disturbed",

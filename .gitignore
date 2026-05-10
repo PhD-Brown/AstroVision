@@ -1,0 +1,90 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# AstroVision — .gitignore
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Données & modèles (trop lourds pour Git) ──────────────────────────────────
+data/
+checkpoints/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.joblib
+
+# ── Figures générées ──────────────────────────────────────────────────────────
+figures/*.png
+figures/*.jpg
+figures/*.jpeg
+figures/*.gif
+figures/*.svg
+figures/*.pdf
+
+# ── Environnements Python ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+
+# ── Cache Python ──────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# ── Weights & Biases ──────────────────────────────────────────────────────────
+wandb/
+artifacts/
+
+# ── Optuna ────────────────────────────────────────────────────────────────────
+*.db
+optuna_studies/
+
+# ── Tests & coverage ──────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# ── Linting & type checking ───────────────────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ── Système ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.swo
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+*.pem
+*.key
+secrets.yaml
+secrets.json
+infos

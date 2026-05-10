@@ -28,8 +28,8 @@ class SimpleCNN(nn.Module):
 
         def conv_block(in_c, out_c, drop2d=0.1):
             return nn.Sequential(
-                nn.Conv2d(in_c, out_c, 3, padding=1), nn.BatchNorm2d(out_c), nn.ReLU(inplace=True),
-                nn.Conv2d(out_c, out_c, 3, padding=1), nn.BatchNorm2d(out_c), nn.ReLU(inplace=True),
+                nn.Conv2d(in_c, out_c, 3, padding=1), nn.BatchNorm2d(out_c), nn.ReLU(),
+                nn.Conv2d(out_c, out_c, 3, padding=1), nn.BatchNorm2d(out_c), nn.ReLU(),
                 nn.MaxPool2d(2),
                 nn.Dropout2d(drop2d),
             )
@@ -38,14 +38,14 @@ class SimpleCNN(nn.Module):
             conv_block(3,   32,  0.10),   # → 128×128
             conv_block(32,  64,  0.10),   # →  64×64
             conv_block(64,  128, 0.20),   # →  32×32
-            nn.Conv2d(128, 256, 3, padding=1), nn.BatchNorm2d(256), nn.ReLU(inplace=True),
+            nn.Conv2d(128, 256, 3, padding=1), nn.BatchNorm2d(256), nn.ReLU(),
             nn.MaxPool2d(2),              # →  16×16
         )
 
         self.classifier = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             nn.Flatten(),
-            nn.Linear(256, 256), nn.ReLU(inplace=True), nn.Dropout(dropout),
+            nn.Linear(256, 256), nn.ReLU(), nn.Dropout(dropout),
             nn.Linear(256, num_classes),
         )
 
